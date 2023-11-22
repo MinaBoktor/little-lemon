@@ -1,9 +1,10 @@
 
-// Require two Props (Style and Text)
+// Require one Prop Text
 
 function Button(props) {
+
     return(
-        <button style={props.style}>{props.text}</button>
+        <button id={props.id}>{props.text}</button>
     )
 }
 
