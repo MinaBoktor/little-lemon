@@ -22,6 +22,9 @@ const BookingForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        if (isValid) {
+            return false
+        }
         setDate({date:'', isTouched:false})
         setTime({time:'', isTouched:false})
         setGuests({guests:'', isTouched:false})
@@ -45,7 +48,7 @@ const BookingForm = () => {
             <div style={{justifyContent:'center', alignItems:'center', width:"100%"}}>  
                 <form onSubmit={handleSubmit} style={{display:'Grid', maxWidth:200, gap:20}}>
                     <label for="res-date">Choose date</label>
-                    <input type="date" value={date.date} id="res-date" style={(((date.date.length)==0) && date.isTouched)?{borderWidth:4, borderColor:'red'}:{borderWidth:0}} onChange={(e) => setDate({date:e.target.value, isTouched:true})}></input>
+                    <input required type="date" value={date.date} id="res-date" style={(((date.date.length)==0) && date.isTouched)?{borderWidth:4, borderColor:'red'}:{borderWidth:0}} onChange={(e) => setDate({date:e.target.value, isTouched:true})}></input>
                     {(((date.date.length)==0) && date.isTouched)?<p style={{margin:0}}>Missing Date</p>:''}
                     <label for="res-time">Choose time</label>
                     <select value={time.time} onChange={(e) => setTime({time:e.target.value, isTouched:true})} id="res-time">
@@ -63,7 +66,7 @@ const BookingForm = () => {
                         <option>Birthday</option>
                         <option>Anniversary</option>
                     </select>
-                    <Button type="submit" disabled={!isValid()} text="Make Your Reservation"></Button>
+                    <Button type="submit" text="Make Your Reservation"></Button>
                 </form>
             </div>
         </>
