@@ -19,6 +19,8 @@ nav a {
   
 }
 
+
+
 nav li {
   list-style-type: none;
   margin:1rem;
@@ -176,4 +178,35 @@ footer section {
 footer article {
   margin-right:2rem;
   margin-left: 0;
+}
+
+form label {
+  text-align: center;
+  font-family: "Markazi Text";
+  font-size: large;
+  font-weight: 600;
+  margin-bottom: 0px;
+  padding-bottom: 0;
+}
+
+form input, select{
+  margin-top:0;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #fff5c0;
+  padding:2px;
+  font-family: "Markazi Text";
+  text-align: center;
+  border-width:0;
+}
+
+form button {
+  background-color: #f4ce14;
+  font-family: 'Markazi Text';
+  border:0;
+  padding:10px;
+  margin-top:2rem;
+  font-size: larger;
+  border-radius: 10px;
 }

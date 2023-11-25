@@ -4,7 +4,7 @@
 function Button(props) {
 
     return(
-        <button id={props.id}>{props.text}</button>
+        <button disabled={props.disabled} onSubmit={props.submit} id={props.id}>{props.text}</button>
     )
 }
 
